@@ -32,20 +32,24 @@ Run the Code
 ============
 Before running the code, make sure you update the following information:
 
-char ssid[] = "YOUR_SSID";    //  your network SSID (name) 
-char pass[] = "YOUR PASSWD";  // your network password (use for WPA, or use as key for WEP)
-int keyIndex = 0;             // your network key Index number (needed only for WEP)
- 
-// Your Xively key to let you upload data
-char xivelyKey[] = "YOUR XIVELY KEY";
+char ssid[] = "YOUR_SSID";    //  your network SSID (name) <br>
+char pass[] = "YOUR PASSWD";  // your network password (use for WPA, or use as key for WEP)<br>
+int keyIndex = 0;             // your network key Index number (needed only for WEP)<br>
+ <br>
+// Your Xively key to let you upload data<br>
+char xivelyKey[] = "YOUR XIVELY KEY";<br>
 
-//your xively feed ID
-#define xivelyFeed YOUR_XIVELY_FEED_ID
+//your xively feed ID<br>
+"#define xivelyFeed YOUR_XIVELY_FEED_ID<br>
+<br>
+Plus you need to ensure that the channel names are consistent between the Arduino code and Xively.<br>
+//datastreams<br>
+char sensorID[] = "LIGHT_SENSOR_CHANNEL";<br>
+char ledID[] = "LED_CHANNEL";<br>
+
+The code is currently configured for WPA WiFi access.<br>
+This is configured in line 78 of the code.<br>
+<b>For WEP -</b> status = WiFi.begin(ssid, keyIndex, pass);<br>
+<b>For WPA -</b> status = WiFi.begin(ssid,pass);<br>
 
 
-Plus you need to ensure that the channel names are consistent between the Arduino code and Xively.
-//datastreams
-char sensorID[] = "LIGHT_SENSOR_CHANNEL";
-char ledID[] = "LED_CHANNEL";
-
-The code is currently configured for WPA WiFi access.
